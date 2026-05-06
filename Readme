@@ -1,0 +1,173 @@
+# Notification System
+
+## Overview
+
+This project is a full stack notification platform developed as part of the AffordMed assessment.
+
+The system supports:
+- Fetching notifications from protected APIs
+- Sorting notifications based on priority
+- Filtering notifications by category
+- Logging middleware integration
+- React frontend rendering
+- Responsive notification display
+
+---
+
+# Tech Stack
+
+## Frontend
+- React
+- Vite
+- Vanilla CSS
+
+## Backend
+- Node.js
+- Express.js
+- Fetch API
+
+---
+
+# Features
+
+- Protected API integration using Bearer Token
+- Notification priority sorting
+- Top 10 notifications display
+- Filter notifications by type
+- Logging middleware
+- Query parameter support
+- Responsive frontend UI
+
+---
+
+# Notification Priority
+
+Notifications are sorted in the following order:
+
+1. Placement
+2. Result
+3. Event
+
+If priorities are same, latest notifications are displayed first.
+
+---
+
+# Project Structure
+
+```text
+ROLLNUMBER/
+│
+├── logging_middleware/
+│   └── logger.js
+│
+├── notification_app_be/
+│   └── server.js
+│
+├── notification_app_fe/
+│   └── App.jsx
+│
+├── notification_system_design.md
+│
+└── README.md
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd notification_app_be
+
+npm install
+
+node server.js
+```
+
+Backend runs on:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# Frontend Setup
+
+```bash
+cd notification_app_fe
+
+npm install
+
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# API Endpoints
+
+## Get Notifications
+
+```http
+GET /notifications
+```
+
+### Query Parameters
+
+| Parameter | Description |
+|---|---|
+| page | Pagination page |
+| limit | Number of notifications |
+| notification_type | Filter by notification type |
+
+Example:
+
+```http
+GET /notifications?page=1&limit=10&notification_type=Placement
+```
+
+---
+
+# Logging Middleware
+
+The application includes logging middleware which logs:
+- request method
+- request route
+- backend events
+- error events
+
+---
+
+# Frontend Features
+
+- Dynamic notification rendering
+- Filter dropdown
+- Responsive layout
+- Real-time fetch from backend
+
+---
+
+# Backend Features
+
+- Protected API communication
+- Bearer token authentication
+- Query parameter handling
+- Notification sorting
+- Error handling
+
+---
+
+# Conclusion
+
+This project demonstrates:
+- full stack development
+- API integration
+- backend middleware handling
+- notification prioritization
+- frontend rendering
+- scalable notification system architecture
